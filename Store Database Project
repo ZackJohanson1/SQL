@@ -1,3 +1,5 @@
+#In this SQL, I'm querying a database that contains one table with multiple items
+
 CREATE TABLE store (id INTEGER PRIMARY KEY, item_type TEXT, stock INTEGER, color TEXT, price INTEGER);
 
 INSERT INTO store VALUES(1, "mountain bike", 5, "red", 700);
@@ -7,13 +9,17 @@ INSERT INTO store VALUES(4, "helmet", 10, "black", 100);
 INSERT INTO store VALUES(5, "tires", 20, "black", 50);
 INSERT INTO store Values(6, "tire pump", 12, "grey", 11);
 
+#Sorting all items by price (desc order).
 SELECT * FROM store 
-ORDER BY price;
+ORDER BY price desc;
 
+#Which items are in stock in a black color sorting price (asc order).
 SELECT * FROM store 
 WHERE color="black"
 ORDER BY price;
 
+#Displaying total number of items in stock.
 SELECT SUM(stock) FROM store;
 
+#Displaying item with the most stock.
 SELECT MAX(stock) FROM store;
