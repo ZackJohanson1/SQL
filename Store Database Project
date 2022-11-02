@@ -1,0 +1,19 @@
+CREATE TABLE store (id INTEGER PRIMARY KEY, item_type TEXT, stock INTEGER, color TEXT, price INTEGER);
+
+INSERT INTO store VALUES(1, "mountain bike", 5, "red", 700);
+INSERT INTO store VALUES(2, "road bike", 6, "blue", 800);
+INSERT INTO store VALUES(3, "gravel bike", 3, "black", 1000);
+INSERT INTO store VALUES(4, "helmet", 10, "black", 100);
+INSERT INTO store VALUES(5, "tires", 20, "black", 50);
+INSERT INTO store Values(6, "tire pump", 12, "grey", 11);
+
+SELECT * FROM store 
+ORDER BY price;
+
+SELECT * FROM store 
+WHERE color="black"
+ORDER BY price;
+
+SELECT SUM(stock) FROM store;
+
+SELECT MAX(stock) FROM store;
